@@ -1,28 +1,29 @@
 var blanks = ["name", "favFood", "beverage"];
+var infoContainer = [];
 
 $(document).ready(function() {
   $("#form").submit(function(event) {
     event.preventDefault();
 
+    blanks.forEach(function(blank) {
+      var userInput = $("#" + blank).val();
+      infoContainer.push(userInput);
+
+      $("#output").append("<li>" + userInput + "</li>");
+    });
+
+    console.log(infoContainer);
+  });
+});
+
+
+
+
+
+
     // blanks.push($("#name").val());
     // blanks.push($("#favFood").val());
     // blanks.push($("#beverage").val());
-
-
-    blanks.forEach(function(blank) {
-      var userInput = $("#" + blank).val();
-
-
-      $ ("#output").append("<li>" + userInput + "</li>");
-    });
-        console.log(userInput);
-      });
-    });
-
-
-
-
-
 
 
 
